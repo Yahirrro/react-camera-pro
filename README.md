@@ -3,6 +3,17 @@
 
 # react-camera-pro
 
+Fix for camera preview showing only half width on iOS 17.2.1+
+After upgrading to iOS 17.2.1, the camera video preview in react-camera-pro only showed half the width. To fix this issue while maintaining good video quality across devices:
+Set the minimum width and height constraints to 1920 in the camera configuration:
+js
+width: { min: 1920 },
+height: { min: 1920 }
+
+This resolved the half-width preview problem introduced in iOS 17.2.1 and later versions, without significantly degrading the image quality on most devices tested.
+
+---
+
 Universal Camera component for React.
 
 Designed with focus on Android and iOS cameras.
@@ -87,6 +98,7 @@ errorMessages: {
 ```
 
 Default:
+
 ```
   {
     noCameraAccessible: 'No camera device accessible. Please connect your camera or try a different browser.',
