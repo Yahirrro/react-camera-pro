@@ -148,8 +148,8 @@ var initCameraStream = function (stream, setStream, currentFacingMode, videoSour
         video: {
             deviceId: videoSourceDeviceId ? { exact: videoSourceDeviceId } : undefined,
             facingMode: currentFacingMode,
-            width: { ideal: 1920 },
-            height: { ideal: 1920 },
+            width: { min: 1920 },
+            height: { min: 1920 },
         },
     };
     if ((_a = navigator === null || navigator === void 0 ? void 0 : navigator.mediaDevices) === null || _a === void 0 ? void 0 : _a.getUserMedia) {
